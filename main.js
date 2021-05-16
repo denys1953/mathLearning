@@ -38,7 +38,7 @@ function randomQuestion() {
          return getRundomNumber(-200, 200) + " " + randOp + " " + randNum
       }
    } else {
-      return getRundomNumber(0, 21) + " " + randOp + " " + getRundomNumber(0, 21)
+      return getRundomNumber(0, 100) + " " + randOp + " " + getRundomNumber(0, 21)
    }
 }
 
