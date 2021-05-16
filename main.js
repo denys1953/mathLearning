@@ -5,7 +5,7 @@ let arr = ['+', '-', '*']
 let count = 0
 let trueCount = 0
 document.addEventListener('keypress', (e) => {
-   if (e.code == 'Enter') start()
+   if (e.code == 'Enter' || e.keyCode == 13) start()
 })
 
 
