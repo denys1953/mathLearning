@@ -1,7 +1,7 @@
 let question = document.getElementById('question')
 let counter = document.getElementById('counter')
 let input = document.getElementById('input')
-let arr = ['+', '-', '*']
+let arr = ['+', '-', '*', '/']
 let count = 0
 let trueCount = 0
 document.addEventListener('keypress', (e) => {
@@ -37,6 +37,18 @@ function randomQuestion() {
       } else {
          return getRundomNumber(-200, 200) + " " + randOp + " " + randNum
       }
+   } else if(randOp == '/') {
+      let randSecond = getRundomNumber(1, 300)
+      let rand = getRundomNumber(1, 300) + " " + randOp + " " + randSecond
+      while(eval(rand) % 1 !== 0) {
+         if (randSecond !== 0) {
+            randSecond = getRundomNumber(1, 300)
+            rand = getRundomNumber(1, 300) + " " + randOp + " " + randSecond
+         } else {
+            continue
+         }
+      }
+      return rand
    } else {
       return getRundomNumber(0, 100) + " " + randOp + " " + getRundomNumber(0, 21)
    }
