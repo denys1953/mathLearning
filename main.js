@@ -1,7 +1,7 @@
 let question = document.getElementById('question')
 let counter = document.getElementById('counter')
 let input = document.getElementById('input')
-let arr = ['+', '-', '*', '/']
+let arr = ['+', '-', '*', '/', '%']
 let count = 0
 let trueCount = 0
 document.addEventListener('keypress', (e) => {
@@ -12,16 +12,19 @@ document.addEventListener('keypress', (e) => {
 function start() {
    if (input.value !== '') {
       let quest = randomQuestion()
-      
-      if (parseInt(input.value) == eval(question.innerHTML)) {
-         count++
-         trueCount++
-         counter.innerHTML = count + ' з ' + trueCount
-         styleTrue()
+      if (question.innerHTML.toString().includes('%')) {
+         let index = question.innerHTML.toString().indexOf('%')
+         let num = question.innerHTML.toString().slice(index+3)
+         let persent = question.innerHTML.toString().slice(0, index)
+         if (parseInt(input.value) === (num*persent)/100) {
+            trueSolution()
+         } else {
+            falseSolution()
+         }
+      } else if (parseInt(input.value) == eval(question.innerHTML)) {
+         trueSolution()
       } else {
-         trueCount++
-         counter.innerHTML = count + ' з ' + trueCount
-         styleFalse()
+         falseSolution()
       }
       input.value = ''
       question.innerHTML = quest
@@ -49,6 +52,16 @@ function randomQuestion() {
          }
       }
       return rand
+   } else if (randOp === '%') {
+      let parsentage = getRundomNumber(1, 99)
+      let randNum = getRundomNumber(1, 300)
+      let randSolve = (parsentage * randNum)/100
+      while (randSolve % 1 !== 0) {
+         parsentage = getRundomNumber(1, 99)
+         randNum = getRundomNumber(1, 300)
+         randSolve = (parsentage * randNum)/100
+      }
+      return parsentage + "% з " + randNum
    } else {
       return getRundomNumber(0, 100) + " " + randOp + " " + getRundomNumber(0, 21)
    }
@@ -77,3 +90,15 @@ function styleFalse() {
    input.style.transition = 'none'
 }
 question.innerHTML = randomQuestion()
+
+function trueSolution() {
+   count++
+   trueCount++
+   counter.innerHTML = count + ' / ' + trueCount
+   styleTrue()
+}
+function falseSolution() {
+   trueCount++
+   counter.innerHTML = count + ' / ' + trueCount
+   styleFalse()
+}
