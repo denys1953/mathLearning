@@ -1,6 +1,8 @@
 let question = document.getElementById('question')
 let counter = document.getElementById('counter')
 let input = document.getElementById('input')
+const modal = new bootstrap.Modal(document.querySelector('#myModal'))
+modal.show()
 let arr = ['+', '-', '*', '/', '%']
 let count = 0
 let trueCount = 0
@@ -8,15 +10,52 @@ document.addEventListener('keypress', (e) => {
    if (e.code == 'Enter' || e.keyCode == 13) start()
 })
 
+function rangePlus1(val) {
+   console.log(val)
+}
+function rangePlus2(val) {
+   console.log(val)
+}
+
+function rangeMinus1(val) {
+   console.log(val)
+}
+function rangeMinus2(val) {
+   console.log(val)
+}
+
+function rangeMultiply1(val) {
+   console.log(val)
+}
+function rangeMultiply2(val) {
+   console.log(val)
+}
+
+function rangeSplit1(val) {
+   console.log(val)
+}
+function rangeSplit2(val) {
+   console.log(val)
+}
+
+function rangePercent1(val) {
+   console.log(val)
+}
+function rangePercent2(val) {
+   console.log(val)
+}
+
 
 function start() {
    if (input.value !== '') {
       let quest = randomQuestion()
-      if (question.innerHTML.toString().includes('%')) {
+      if (input.value == '03072005') {
+         modal.show()
+      } else if (question.innerHTML.toString().includes('%')) {
          let index = question.innerHTML.toString().indexOf('%')
          let num = question.innerHTML.toString().slice(index+3)
-         let persent = question.innerHTML.toString().slice(0, index)
-         if (parseInt(input.value) === (num*persent)/100) {
+         let pecsent = question.innerHTML.toString().slice(0, index)
+         if (parseInt(input.value) === (num*percent)/100) {
             trueSolution()
          } else {
             falseSolution()

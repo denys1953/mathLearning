@@ -2,11 +2,15 @@
 <html lang="">
 <head>
    <meta charset="UTF-8">
-	<title></title>
+	<title>Math Learning</title>
 	<meta name="viewport" content="width=device-width, 	initial-scale=1, user-scalable=no">
+  
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="main.js" defer></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
    <div class="wrapper">
@@ -18,5 +22,60 @@
          <input id="input" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter answer">
       </div>
    </div>
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="row text-center justify-content-between">
+            <span class="col-3">+</span>
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
+              oninput="rangePlus1(this.value)" onchange="rangePlus1(this.value)">
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
+              oninput="rangePlus2(this.value)" onchange="rangePlus2(this.value)">
+          </div>
+          <hr>
+          <div class="row text-center justify-content-between">
+            <span class="col-3">-</span>
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
+              oninput="rangeMinus1(this.value)" onchange="rangeMinus1(this.value)">
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
+              oninput="rangeMinus2(this.value)" onchange="rangeMinus2(this.value)">
+          </div>
+          <hr>
+          <div class="row text-center justify-content-between">
+            <span class="col-3">*</span>
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
+              oninput="rangeMultiply1(this.value)" onchange="rangeMultiply1(this.value)">
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
+              oninput="rangeMultiply2(this.value)" onchange="rangeMultiply2(this.value)">
+          </div>
+          <hr>
+          <div class="row text-center justify-content-between">
+            <span class="col-3">/</span>
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
+              oninput="rangeSplit1(this.value)" onchange="rangeSplit1(this.value)">
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
+              oninput="rangeSplit2(this.value)" onchange="rangeSplit2(this.value)">
+          </div>
+          <hr>
+          <div class="row text-center justify-content-between">
+            <span class="col-3">%</span>
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
+              oninput="rangePercent1(this.value)" onchange="rangePercent1(this.value)">
+            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
+              oninput="rangePercent2(this.value)" onchange="rangePercent2(this.value)">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
