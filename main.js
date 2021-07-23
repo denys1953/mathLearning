@@ -54,7 +54,7 @@ function start() {
       } else if (question.innerHTML.toString().includes('%')) {
          let index = question.innerHTML.toString().indexOf('%')
          let num = question.innerHTML.toString().slice(index+3)
-         let pecsent = question.innerHTML.toString().slice(0, index)
+         let percent = question.innerHTML.toString().slice(0, index)
          if (parseInt(input.value) === (num*percent)/100) {
             trueSolution()
          } else {
