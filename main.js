@@ -66,6 +66,7 @@ function start() {
       let quest = randomQuestion()
       if (input.value == '03072005') {
          modal.show()
+         input.blur()
       } else if (question.innerHTML.toString().includes('%')) {
          let index = question.innerHTML.toString().indexOf('%')
          let num = question.innerHTML.toString().slice(index+3)
