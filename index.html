@@ -32,43 +32,48 @@
         </div>
         <div class="modal-body">
           <div class="row text-center justify-content-between">
-            <span class="col-3">+</span>
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
-              oninput="rangePlus1(this.value)" onchange="rangePlus1(this.value)">
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
-              oninput="rangePlus2(this.value)" onchange="rangePlus2(this.value)">
+            <span class="col-3">
+              <input class="form-check-input" checked type="checkbox" value="+" id="flexCheckDefault">+</span>
+            <input type="number" class="col-3 form-range" id="customRange1"
+              oninput="rangePlus1(this.value)">
+            <input type="number" class="col-3 form-range" id="customRange2"
+              oninput="rangePlus2(this.value)">
           </div>
           <hr>
           <div class="row text-center justify-content-between">
-            <span class="col-3">-</span>
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
-              oninput="rangeMinus1(this.value)" onchange="rangeMinus1(this.value)">
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
-              oninput="rangeMinus2(this.value)" onchange="rangeMinus2(this.value)">
+            <span class="col-3">
+              <input class="form-check-input" checked type="checkbox" value="-" id="flexCheckDefault">-</span>
+            <input type="number" class="col-3 form-range" id="customRange1"
+              oninput="rangeMinus1(this.value)">
+            <input type="number" class="col-3 form-range" id="customRange2"
+              oninput="rangeMinus2(this.value)">
           </div>
           <hr>
           <div class="row text-center justify-content-between">
-            <span class="col-3">*</span>
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
-              oninput="rangeMultiply1(this.value)" onchange="rangeMultiply1(this.value)">
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
-              oninput="rangeMultiply2(this.value)" onchange="rangeMultiply2(this.value)">
+            <span class="col-3">
+              <input class="form-check-input" checked type="checkbox" value="*" id="flexCheckDefault">*</span>
+            <input type="number" class="col-3 form-range" id="customRange1"
+              oninput="rangeMultiply1(this.value)">
+            <input type="number" class="col-3 form-range" id="customRange2"
+              oninput="rangeMultiply2(this.value)">
           </div>
           <hr>
           <div class="row text-center justify-content-between">
-            <span class="col-3">/</span>
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
-              oninput="rangeSplit1(this.value)" onchange="rangeSplit1(this.value)">
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
-              oninput="rangeSplit2(this.value)" onchange="rangeSplit2(this.value)">
+            <span class="col-3">
+              <input class="form-check-input" checked type="checkbox" value="/" id="flexCheckDefault">/</span>
+            <input type="number" class="col-3 form-range" id="customRange1"
+              oninput="rangeSplit1(this.value)">
+            <input type="number" class="col-3 form-range" id="customRange2"
+              oninput="rangeSplit2(this.value)">
           </div>
           <hr>
           <div class="row text-center justify-content-between">
-            <span class="col-3">%</span>
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange1"
-              oninput="rangePercent1(this.value)" onchange="rangePercent1(this.value)">
-            <input min="-1000" max="1000" type="range" class="col-3 form-range" id="customRange2"
-              oninput="rangePercent2(this.value)" onchange="rangePercent2(this.value)">
+            <span class="col-3">
+              <input class="form-check-input" checked type="checkbox" value="%" id="flexCheckDefault">%</span>
+            <input type="number" class="col-3 form-range" id="customRange1"
+              oninput="rangePercent1(this.value)">
+            <input type="number" class="col-3 form-range" id="customRange2"
+              oninput="rangePercent2(this.value)">
           </div>
         </div>
         <div class="modal-footer">

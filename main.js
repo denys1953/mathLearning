@@ -1,14 +1,29 @@
 let question = document.getElementById('question')
 let counter = document.getElementById('counter')
 let input = document.getElementById('input')
+let checkbox = document.querySelectorAll('.form-check-input')
 const modal = new bootstrap.Modal(document.querySelector('#myModal'))
-modal.show()
-let arr = ['+', '-', '*', '/', '%']
+let arr = []
 let count = 0
 let trueCount = 0
 document.addEventListener('keypress', (e) => {
    if (e.code == 'Enter' || e.keyCode == 13) start()
 })
+
+for (let i = 0; i < checkbox.length; i++) {
+   if (checkbox[i].checked) {
+      arr.push(checkbox[i].value)
+   }
+   checkbox[i].addEventListener('click', check)
+}
+
+function check() {
+   if (!this.checked) {
+      arr.splice(arr.indexOf(this.value), 1)
+   } else {
+      arr.push(this.value)
+   }
+}
 
 function rangePlus1(val) {
    console.log(val)
