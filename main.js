@@ -7,8 +7,17 @@ let arr = []
 let count = 0
 let trueCount = 0
 document.addEventListener('keypress', (e) => {
-   if (e.code == 'Enter' || e.keyCode == 13) start()
+   if (e.code == 'Enter' || e.keyCode == 13) settings()
 })
+
+for (let i = 0; i < checkbox.length; i++) {
+   let local = JSON.parse(localStorage.getItem('checkbox' + i))
+   if (local == null) {
+      checkbox[i].checked = true
+   } else {
+      checkbox[i].checked = local
+   }
+}
 
 for (let i = 0; i < checkbox.length; i++) {
    if (checkbox[i].checked) {
@@ -22,6 +31,9 @@ function check() {
       arr.splice(arr.indexOf(this.value), 1)
    } else {
       arr.push(this.value)
+   }
+   for (let i = 0; i < checkbox.length; i++) {
+      localStorage.setItem('checkbox' + i, checkbox[i].checked)
    }
 }
 
@@ -61,10 +73,10 @@ function rangePercent2(val) {
 }
 
 
-function start() {
+function settings() {
    if (input.value !== '') {
       let quest = randomQuestion()
-      if (input.value == '03072005') {
+      if (input.value == '01') {
          modal.show()
          input.blur()
       } else if (question.innerHTML.toString().includes('%')) {
