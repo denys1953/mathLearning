@@ -110,7 +110,7 @@ function randomQuestion() {
    } else if(randOp == '/') {
       let randSecond = getRundomNumber(1, 300)
       let rand = getRundomNumber(1, 300) + " " + randOp + " " + randSecond
-      while(eval(rand) % 1 !== 0) {
+      while(eval(rand) % 1 !== 0 || eval(rand) == 1 || randSecond == 1) {
          if (randSecond !== 0) {
             randSecond = getRundomNumber(1, 300)
             rand = getRundomNumber(1, 300) + " " + randOp + " " + randSecond
